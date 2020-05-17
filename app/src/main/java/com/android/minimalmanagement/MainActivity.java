@@ -1,11 +1,11 @@
 package com.android.minimalmanagement;
 
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
-import android.widget.Toast;
+import android.widget.*;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
     Button btLogin;
     TextView txtNote;
     int count = 5;
+    ImageView imgShow;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
         etPassword = findViewById(R.id.et_password);
         btLogin = findViewById(R.id.bt_login);
         txtNote = findViewById(R.id.txt_Note);
+        imgShow = findViewById(R.id.img_ShowHide);
 
         btLogin.setOnClickListener(new View.OnClickListener() {
 
@@ -43,5 +45,23 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+
+        imgShow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (imgShow.getTag().equals("Hide")) {
+                    etPassword.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                    Drawable drawable = getResources().getDrawable(R.drawable.ic_show);
+                    imgShow.setTag("Show");
+                    imgShow.setImageDrawable(drawable);
+                } else {
+                    etPassword.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                    Drawable drawable = getResources().getDrawable(R.drawable.ic_hide);
+                    imgShow.setTag("Hide");
+                    imgShow.setImageDrawable(drawable);
+                }
+            }
+        });
+
     }
 }
