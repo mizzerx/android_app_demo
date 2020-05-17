@@ -35,7 +35,9 @@
                 android:hint="Enter account"
                 android:textColor="@android:color/white"
                 android:textColorHint="@android:color/white"
-                android:background="@android:color/transparent"/>
+                android:background="@android:color/transparent"
+                android:singleLine="true"
+                android:imeOptions="actionNext"/>
 
     </LinearLayout>
 
@@ -60,7 +62,9 @@
                 android:textColor="@android:color/white"
                 android:textColorHint="@android:color/white"
                 android:background="@android:color/transparent"
-                android:inputType="textPassword"/>
+                android:inputType="textPassword"
+                android:singleLine="true"
+                android:imeOptions="actionDone"/>
 
         <ImageView
                 android:layout_width="20dp"

@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.*;
 import androidx.appcompat.app.AlertDialog;
@@ -41,6 +42,8 @@ public class MainActivity extends AppCompatActivity {
                     count--;
                     Toast.makeText(getApplicationContext(), "You are not a admin / Username or password is not valid", Toast.LENGTH_SHORT).show();
                     txtNote.setText("You have " + count + " times to input username and password!");
+                    etUsername.setText("");
+                    etPassword.setText("");
                     if (count == 0) btLogin.setEnabled(false);
                 }
             }
@@ -62,6 +65,12 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+    }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        etPassword.setText("");
     }
 }
