@@ -2,6 +2,7 @@ package com.android.minimalmanagement;
 
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
+import android.os.CountDownTimer;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
 import android.view.KeyEvent;
@@ -19,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
     ImageView imgShow;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -44,7 +45,24 @@ public class MainActivity extends AppCompatActivity {
                     txtNote.setText("You have " + count + " times to input username and password!");
                     etUsername.setText("");
                     etPassword.setText("");
-                    if (count == 0) btLogin.setEnabled(false);
+                    if (count == 0) {
+                        btLogin.setEnabled(false);
+
+                        new CountDownTimer(30000, 1000) {
+
+                            @Override
+                            public void onTick(long millisUntilFinished) {
+                                txtNote.setText("Time Remaining: " + millisUntilFinished / 1000 + " s");
+                            }
+
+                            @Override
+                            public void onFinish() {
+                                count = 5;
+                                txtNote.setText("");
+                                btLogin.setEnabled(true);
+                            }
+                        }.start();
+                    }
                 }
             }
         });
@@ -72,5 +90,7 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
 
         etPassword.setText("");
+        count = 5;
+        txtNote.setText("");
     }
 }
