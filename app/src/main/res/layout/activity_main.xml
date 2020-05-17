@@ -72,4 +72,11 @@
             android:layout_marginTop="30dp"
             android:background="@drawable/round_button"/>
 
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:id="@+id/txt_Note"
+            android:textColor="@android:color/white"/>
+
 </LinearLayout>
