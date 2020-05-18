@@ -5,11 +5,63 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        tools:context=".OverviewActivity">
+        tools:context=".OverviewActivity"
+        android:orientation="vertical">
 
-    <TextView
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="top">
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Building Name: My Dinh"
+                android:layout_marginTop="10dp"
+                android:padding="5dp"
+                android:gravity="top"/>
+
+        <ImageView
+                android:layout_width="50dp"
+                android:layout_height="30dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="10dp"
+                android:id="@+id/img_Setting"
+                android:src="@drawable/ic_settings"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="top">
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:text="Address: xxx"
+                android:layout_marginTop="10dp"
+                android:padding="5dp"
+                android:gravity="top"/>
+
+        <SearchView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:id="@+id/srv_search"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+        <ExpandableListView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/expandable_ListRoom"/>
+
+    </LinearLayout>
 
 </LinearLayout>
