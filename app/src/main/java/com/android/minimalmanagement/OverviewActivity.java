@@ -2,8 +2,7 @@ package com.android.minimalmanagement;
 
 import android.content.Intent;
 import android.view.View;
-import android.widget.ExpandableListView;
-import android.widget.ImageView;
+import android.widget.*;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
@@ -13,10 +12,7 @@ import java.util.List;
 
 public class OverviewActivity extends AppCompatActivity {
     ImageView imgSetting;
-    ExpandableListView expandableListView;
-    List<String> listGroup;
-    HashMap<String, List<String>> listItem;
-    MainAdapter adapter;
+    TextView txtListFloor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,11 +20,7 @@ public class OverviewActivity extends AppCompatActivity {
         setContentView(R.layout.activity_overview);
 
         imgSetting = findViewById(R.id.img_Setting);
-        expandableListView = findViewById(R.id.expandable_ListRoom);
-        listGroup = new ArrayList<>();
-        listItem = new HashMap<>();
-        adapter = new MainAdapter(this, listGroup, listItem);
-        expandableListView.setAdapter(adapter);
+        txtListFloor = findViewById(R.id.txt_listFloor);
 
         imgSetting.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -38,23 +30,13 @@ public class OverviewActivity extends AppCompatActivity {
             }
         });
 
-        initListData();
+        txtListFloor.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(OverviewActivity.this, ListFloor.class);
+                startActivity(intent);
+            }
+        });
 
-
-    }
-
-    private void initListData() {
-        listGroup.add(getString(R.string.group));
-
-        String[] arr;
-
-        List<String> list = new ArrayList<>();
-        arr = getResources().getStringArray(R.array.group);
-        for (String item : arr) {
-            list.add(item);
-        }
-
-        listItem.put(listGroup.get(0), list);
-        adapter.notifyDataSetChanged();
     }
 }

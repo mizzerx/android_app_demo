@@ -1,90 +1,55 @@
 package com.android.minimalmanagement;
 
 import android.content.Context;
+import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseExpandableListAdapter;
+import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
-import java.util.HashMap;
-import java.util.List;
+public class MainAdapter extends BaseAdapter {
+    private Context context;
+    private LayoutInflater inflater;
+    private String[] numberFloor;
+    private int[] floorImage;
 
-public class MainAdapter extends BaseExpandableListAdapter {
-
-    Context context;
-    List<String> listGroup;
-    HashMap<String, List<String>> listItem;
-
-    public MainAdapter(Context context, List<String> listGroup, HashMap<String, List<String>> listItem) {
-        this.context = context;
-        this.listGroup = listGroup;
-        this.listItem = listItem;
+    public MainAdapter(Context c, String[] numberFloor, int[] floorImage) {
+        context = context;
+        this.numberFloor = numberFloor;
+        this.floorImage = floorImage;
     }
 
     @Override
-    public int getGroupCount() {
-        return listGroup.size();
+    public int getCount() {
+        return numberFloor.length;
     }
 
     @Override
-    public int getChildrenCount(int groupPosition) {
-        return this.listItem.get(this.listGroup.get(groupPosition)).size();
+    public Object getItem(int position) {
+        return null;
     }
 
     @Override
-    public Object getGroup(int groupPosition) {
-        return this.listGroup.get(groupPosition);
+    public long getItemId(int position) {
+        return 0;
     }
 
     @Override
-    public Object getChild(int groupPosition, int childPosition) {
-        return this.listItem.get(this.listGroup.get(groupPosition)).get(childPosition);
-    }
-
-    @Override
-    public long getGroupId(int groupPosition) {
-        return groupPosition;
-    }
-
-    @Override
-    public long getChildId(int groupPosition, int childPosition) {
-        return childPosition;
-    }
-
-    @Override
-    public boolean hasStableIds() {
-        return false;
-    }
-
-    @Override
-    public View getGroupView(int groupPosition, boolean isExpanded, View convertView, ViewGroup parent) {
-        String group = (String) getGroup(groupPosition);
+    public View getView(int position, View convertView, ViewGroup parent) {
+        if (inflater == null) {
+            inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        }
         if (convertView == null) {
-            LayoutInflater layoutInflater = (LayoutInflater) this.context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            convertView = layoutInflater.inflate(R.layout.list_group, null);
+            convertView = inflater.inflate(R.layout.row_item, null);
         }
 
-        TextView textView = convertView.findViewById(R.id.list_parent);
-        textView.setText(group);
+        ImageView imageView = convertView.findViewById(R.id.img_item);
+        TextView textView = convertView.findViewById(R.id.txt_num);
+
+        imageView.setImageResource(floorImage[position]);
+        textView.setText(numberFloor[position]);
         return convertView;
-    }
-
-    @Override
-    public View getChildView(int groupPosition, int childPosition, boolean isLastChild, View convertView, ViewGroup parent) {
-        String child = (String) getChild(groupPosition, childPosition);
-        if (convertView == null) {
-            LayoutInflater layoutInflater = (LayoutInflater) this.context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            convertView = layoutInflater.inflate(R.layout.list_item, null);
-        }
-
-        TextView textView = convertView.findViewById(R.id.list_child);
-        textView.setText(child);
-        return convertView;
-    }
-
-    @Override
-    public boolean isChildSelectable(int groupPosition, int childPosition) {
-        return true;
     }
 }

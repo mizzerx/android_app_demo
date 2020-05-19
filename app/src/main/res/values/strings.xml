@@ -1,18 +1,3 @@
 <resources>
     <string name="app_name">MinimalManagement</string>
-    <string name="group">Floor</string>
-    <string-array name="group">
-        <item>Floor 1</item>
-        <item>Floor 2</item>
-        <item>Floor 3</item>
-        <item>Floor 4</item>
-        <item>Floor 5</item>
-        <item>Floor 6</item>
-        <item>Floor 7</item>
-        <item>Floor 8</item>
-        <item>Floor 9</item>
-        <item>Floor 10</item>
-        <item>Floor 11</item>
-        <item>Floor 12</item>
-    </string-array>
 </resources>
