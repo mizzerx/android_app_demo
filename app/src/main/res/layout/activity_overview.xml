@@ -9,9 +9,37 @@
         android:orientation="vertical">
 
     <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Overview Board"
+                android:padding="20dp"
+                android:textSize="30sp"/>
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="top">
+            android:layout_gravity="top">
+
+        <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:id="@+id/img_Setting"
+                android:src="@drawable/one"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="">
 
         <TextView
                 android:layout_width="wrap_content"
@@ -20,14 +48,6 @@
                 android:layout_marginTop="10dp"
                 android:padding="5dp"
                 android:gravity="top"/>
-
-        <ImageView
-                android:layout_width="50dp"
-                android:layout_height="30dp"
-                android:layout_alignParentRight="true"
-                android:layout_marginTop="10dp"
-                android:id="@+id/img_Setting"
-                android:src="@drawable/ic_settings"/>
 
     </RelativeLayout>
 
@@ -44,20 +64,15 @@
                 android:padding="5dp"
                 android:gravity="top"/>
 
-        <SearchView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:id="@+id/srv_search"/>
-
     </RelativeLayout>
 
-    <RelativeLayout
+    <LinearLayout
             android:layout_width="225dp"
             android:layout_height="wrap_content"
             android:padding="10dp"
             android:layout_marginTop="30dp"
             android:layout_marginLeft="100dp"
+            android:gravity="center"
             android:background="@drawable/round_edittext">
 
         <TextView
@@ -67,8 +82,32 @@
                 android:textColor="@android:color/white"
                 android:textColorHint="@android:color/white"
                 android:background="@android:color/transparent"
-                android:hint="Tap to choose floor"/>
+                android:hint="Tap to choose floor"
+                android:layout_centerInParent="true"/>
 
-    </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="150dp"
+                android:textStyle="bold"
+                android:textSize="40sp"
+                android:text="Floor 1"/>
+
+        <GridView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/grid_room"
+                android:layout_marginTop="10dp"
+                android:numColumns="3"/>
+
+    </LinearLayout>
 
 </LinearLayout>

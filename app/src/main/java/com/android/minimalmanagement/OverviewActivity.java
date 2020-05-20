@@ -13,6 +13,12 @@ import java.util.List;
 public class OverviewActivity extends AppCompatActivity {
     ImageView imgSetting;
     TextView txtListFloor;
+    GridView gridRoom;
+
+    String[] numberRoom = {"1", "2", "3", "4", "5"};
+
+    int[] imgRoom = {R.drawable.r_1, R.drawable.r_2, R.drawable.r_3,
+    R.drawable.r_4, R.drawable.r_5};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +27,7 @@ public class OverviewActivity extends AppCompatActivity {
 
         imgSetting = findViewById(R.id.img_Setting);
         txtListFloor = findViewById(R.id.txt_listFloor);
+        gridRoom = findViewById(R.id.grid_room);
 
         imgSetting.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -38,5 +45,15 @@ public class OverviewActivity extends AppCompatActivity {
             }
         });
 
+        OverViewAdapter overViewAdapter = new OverViewAdapter(OverviewActivity.this, imgRoom);
+        gridRoom.setAdapter(overViewAdapter);
+
+        gridRoom.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Toast.makeText(OverviewActivity.this, "Room " + numberRoom[position] + " is selected", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
+
 }

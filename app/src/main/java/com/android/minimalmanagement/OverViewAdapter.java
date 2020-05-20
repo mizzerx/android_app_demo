@@ -1,34 +1,32 @@
 package com.android.minimalmanagement;
 
 import android.content.Context;
-import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
-import android.widget.TextView;
 
-public class MainAdapter extends BaseAdapter {
-    private Context context;
-    private LayoutInflater inflater;
-    private String[] numberFloor;
-    private int[] floorImage;
+import java.util.zip.Inflater;
 
-    public MainAdapter(Context context, String[] numberFloor, int[] floorImage) {
+public class OverViewAdapter extends BaseAdapter {
+    Context context;
+    LayoutInflater inflater;
+    int[] imgRoom;
+
+    public OverViewAdapter(Context context, int[] imgRoom) {
         this.context = context;
-        this.numberFloor = numberFloor;
-        this.floorImage = floorImage;
+        this.imgRoom = imgRoom;
     }
 
     @Override
     public int getCount() {
-        return numberFloor.length;
+        return imgRoom.length;
     }
 
     @Override
     public Object getItem(int position) {
-        return numberFloor[position];
+        return imgRoom;
     }
 
     @Override
@@ -46,10 +44,8 @@ public class MainAdapter extends BaseAdapter {
         }
 
         ImageView imageView = convertView.findViewById(R.id.img_item);
-        TextView textView = convertView.findViewById(R.id.txt_num);
 
-        imageView.setImageResource(floorImage[position]);
-        textView.setText(numberFloor[position]);
+        imageView.setImageResource(imgRoom[position]);
 
         return convertView;
     }
