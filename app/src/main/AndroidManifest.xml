@@ -9,9 +9,22 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
+        <activity android:name=".RoomInfo"
+                  android:parentActivityName=".OverviewActivity">
+        </activity>
+        <activity
+                android:name=".ContractActivity"
+                android:parentActivityName=".SettingScreen">
+        </activity>
+        <activity
+                android:name=".SetTimeActivity"
+                android:parentActivityName=".SettingScreen">
+        </activity>
         <activity android:name=".ListFloor">
         </activity>
-        <activity android:name=".SettingScreen">
+        <activity
+                android:name=".SettingScreen"
+                android:parentActivityName=".OverviewActivity">
         </activity>
         <activity android:name=".OverviewActivity">
         </activity>

@@ -6,10 +6,12 @@ import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.TextView;
 import android.widget.Toast;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 public class ListFloor extends AppCompatActivity {
+
     GridView gridView;
 
     String[] numberFloor = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10"};
@@ -33,7 +35,10 @@ public class ListFloor extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                Toast.makeText(ListFloor.this, "Floor " + numberFloor[position] + " is selected", Toast.LENGTH_SHORT).show();
+                String num = numberFloor[position];
+                boolean check = true;
+
+                Toast.makeText(ListFloor.this, "Floor " + num + " is selected", Toast.LENGTH_SHORT).show();
 
                 Intent intent = new Intent(ListFloor.this, OverviewActivity.class);
 

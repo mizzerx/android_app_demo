@@ -3,6 +3,7 @@ package com.android.minimalmanagement;
 import android.content.Intent;
 import android.view.View;
 import android.widget.*;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
@@ -12,7 +13,7 @@ import java.util.List;
 
 public class OverviewActivity extends AppCompatActivity {
     ImageView imgSetting;
-    TextView txtListFloor;
+    TextView txtListFloor, textViewFloor;
     GridView gridRoom;
 
     String[] numberRoom = {"1", "2", "3", "4", "5"};
@@ -52,8 +53,12 @@ public class OverviewActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Toast.makeText(OverviewActivity.this, "Room " + numberRoom[position] + " is selected", Toast.LENGTH_SHORT).show();
+
+                Intent intent = new Intent(OverviewActivity.this, RoomInfo.class);
+                intent.putExtra("roomNumber", numberRoom[position]);
+
+                startActivity(intent);
             }
         });
     }
-
 }

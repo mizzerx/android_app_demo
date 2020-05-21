@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".SetTimeActivity">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                android:textSize="30sp"
+                android:text="Setting Time"/>
+
+    </LinearLayout>
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="Set Time for Summary Bill"
+                android:textColor="@android:color/black"
+                android:textSize="20sp"
+                android:gravity="center"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="5dp"
+                android:textSize="15sp"
+                android:id="@+id/text_current_date"
+                android:textColor="@android:color/black"/>
+
+    </LinearLayout>
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/setTime_btn"
+                android:text="Set date"
+                android:layout_centerInParent="true"/>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="Set Hours for Summary Bill"
+                android:textColor="@android:color/black"
+                android:textSize="20sp"
+                android:gravity="center"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="5dp"
+                android:textSize="15sp"
+                android:id="@+id/text_current_time"
+                android:textColor="@android:color/black"/>
+
+    </LinearLayout>
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/setHour_btn"
+                android:text="Set time"
+                android:layout_centerInParent="true"/>
+
+
+    </RelativeLayout>
+</LinearLayout>

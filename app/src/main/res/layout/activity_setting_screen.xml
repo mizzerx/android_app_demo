@@ -29,6 +29,7 @@
                 android:layout_height="wrap_content"
                 android:text="Set time for summary bill"
                 android:textColor="@android:color/black"
+                android:id="@+id/txtview_setTime"
                 android:textSize="20sp"
                 android:padding="10sp"/>
 
@@ -51,8 +52,59 @@
                 android:textSize="20sp"
                 android:padding="10sp"/>
     </RelativeLayout>
-    <com.google.android.material.navigation.NavigationView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+
+    <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        <Switch
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Bill Notification"
+                android:textSize="20sp"
+                android:padding="10sp"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtview_contract"
+                android:text="Edit contract"
+                android:textColor="@android:color/black"
+                android:textSize="20sp"
+                android:padding="10sp"/>
+
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="45dp"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/ic_navigate_next"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Logout"
+                android:textColor="@android:color/black"
+                android:id="@+id/txtview_Logout"
+                android:textSize="20sp"
+                android:padding="10sp"/>
+
+        <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="45dp"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/ic_exit"/>
+
+    </RelativeLayout>
 
 </LinearLayout>
