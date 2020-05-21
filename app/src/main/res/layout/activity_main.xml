@@ -8,7 +8,7 @@
         android:gravity="center"
         android:orientation="vertical"
         tools:context=".MainActivity"
-        android:background="@drawable/main_login_background">
+        android:background="@drawable/login_background">
 
     <ImageView
             android:layout_width="150dp"

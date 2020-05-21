@@ -6,6 +6,7 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@drawable/settting_backgound"
         tools:context=".SettingScreen">
 
     <LinearLayout
@@ -16,7 +17,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Setting"
-                android:padding="20dp"
+                android:textColor="@android:color/black"
+                android:padding="50dp"
                 android:textSize="30sp"/>
     </LinearLayout>
 
@@ -28,7 +30,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Set time for summary bill"
-                android:textColor="@android:color/black"
+                android:textColor="@android:color/white"
                 android:id="@+id/txtview_setTime"
                 android:textSize="20sp"
                 android:padding="10sp"/>
@@ -49,6 +51,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Error Notification"
+                android:textColor="@android:color/white"
                 android:textSize="20sp"
                 android:padding="10sp"/>
     </RelativeLayout>
@@ -61,6 +64,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Bill Notification"
+                android:textColor="@android:color/white"
                 android:textSize="20sp"
                 android:padding="10sp"/>
     </RelativeLayout>
@@ -74,7 +78,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/txtview_contract"
                 android:text="Edit contract"
-                android:textColor="@android:color/black"
+                android:textColor="@android:color/white"
                 android:textSize="20sp"
                 android:padding="10sp"/>
 
@@ -94,7 +98,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Logout"
-                android:textColor="@android:color/black"
+                android:textColor="@android:color/white"
                 android:id="@+id/txtview_Logout"
                 android:textSize="20sp"
                 android:padding="10sp"/>
